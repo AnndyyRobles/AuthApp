@@ -25,9 +25,7 @@
 - **File Upload:** Multer
 - **Styling:** Custom CSS
 
-## 📱 Screenshots
-
-[Agregar screenshots aquí]
+![AuthApp Screenshot](authapp_ss.jpg)
 
 ## 🔧 Installation
 
@@ -47,6 +45,5 @@ npm install
 # Configure your Auth0 credentials
 
 # Run the application
-
 npm run dev
 ```
