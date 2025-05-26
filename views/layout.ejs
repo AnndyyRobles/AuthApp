@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - Auth App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo.jpg" alt="AuthApp Logo" class="logo">
+                AuthApp
+            </a>
+            <div class="navbar-nav">
+                <% if (user) { %>
+                    <span class="user-greeting">
+                         <% if (userAvatars[user.id]) { %>
+                            <img src="<%= userAvatars[user.id] %>" class="navbar-avatar">
+                        <% } %>
+                        Hello, <%= user.displayName %>!
+                    </span>
+                    <a class="nav-link" href="/auth/logout">Logout</a>
+                <% } else { %>
+                    <a class="nav-link" href="/auth/login">Login</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <%- body %>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AuthApp. Minimal authentication system.</p>
+        </div>
+    </footer>
+</body>
+</html>

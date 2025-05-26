@@ -1,0 +1,28 @@
+{
+  "name": "auth-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "multer": "^2.0.0",
+    "passport": "^0.7.0",
+    "passport-auth0": "^1.4.4",
+    "zod": "^3.25.28"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

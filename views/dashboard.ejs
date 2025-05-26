@@ -1,0 +1,65 @@
+<% 
+const title = 'Dashboard';
+const body = `
+<div class="dashboard-header">
+    <h1 class="page-title">User Dashboard</h1>
+    <p class="page-subtitle">Your account information</p>
+</div>
+
+<div class="dashboard-content">
+    <div class="user-info">
+        <div class="info-card">
+            <h3 class="card-title">Account Details</h3>
+            <div class="info-item">
+                <span class="info-label">Name:</span>
+                <span class="info-value">${user.displayName}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Email:</span>
+                <span class="info-value">${user.emails ? user.emails[0].value : 'Not available'}</span>
+            </div>
+            <!-- <div class="info-item">
+                <span class="info-label">User ID:</span>
+                <span class="info-value">${user.id}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Provider:</span>
+                <span class="info-value">${user.provider}</span>
+            </div> -->
+        </div>
+    </div>
+    
+    <div class="user-avatar">
+        <div class="avatar-card">
+            <h3 class="card-title">Profile Picture</h3>
+            ${userAvatars[user.id] ? 
+                `<img src="${userAvatars[user.id]}" class="avatar-image" alt="Profile picture">` :
+                user.photos && user.photos[0] ? 
+                    `<img src="${user.photos[0].value}" class="avatar-image" alt="Profile picture">` :
+                    '<div class="avatar-placeholder">No profile picture</div>'
+            }
+            <form action="/upload-avatar" method="POST" enctype="multipart/form-data">
+                <div class="file-upload-row">
+                    <label class="icon-file-btn">
+                        <img src="/images/file.jpg" alt="Upload" class="file-icon">
+                        <input type="file" name="avatar" accept="image/*" required style="display: none;" onchange="showFileName(this)">
+                    </label>
+                    <button type="submit" class="btn">Upload Photo</button>
+                </div>
+                <div id="file-name" style="margin-top: 0.5rem; font-size: 0.85rem; color: #666;"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+function showFileName(input) {
+    const fileName = input.files[0]?.name || '';
+    document.getElementById('file-name').textContent = fileName ? 'Selected: ' + fileName : '';
+}
+</script>
+
+`;
+%>
+
+<%- include('layout', { title, body, user }) %>

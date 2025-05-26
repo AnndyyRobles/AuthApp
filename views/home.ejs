@@ -1,0 +1,37 @@
+<% 
+const title = 'Home';
+const body = `
+<div class="hero-section">
+    <h1 class="hero-title">Welcome to AuthApp</h1>
+    <p class="hero-subtitle">A minimal authentication system built with Node.js and Auth0</p>
+    
+    ${user ? 
+        `<div class="user-section">
+            <p class="welcome-text">Welcome back, <strong>${user.displayName}</strong></p>
+            <a class="btn btn-primary" href="/dashboard">View Dashboard</a>
+         </div>` :
+        `<div class="auth-section">
+            <p class="auth-text">Please authenticate to access your dashboard</p>
+            <a class="btn btn-primary" href="/auth/login">Get Started</a>
+         </div>`
+    }
+</div>
+
+<div class="features-section">
+    <div class="feature">
+        <h3 class="feature-title">Secure</h3>
+        <p class="feature-text">Robust authentication with Auth0</p>
+    </div>
+    <div class="feature">
+        <h3 class="feature-title">Fast</h3>
+        <p class="feature-text">Login in seconds</p>
+    </div>
+    <div class="feature">
+        <h3 class="feature-title">Minimal</h3>
+        <p class="feature-text">Clean and focused interface</p>
+    </div>
+</div>
+`;
+%>
+
+<%- include('layout', { title, body, user }) %>
