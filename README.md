@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="images/logo.jpg" alt="AuthApp Logo" width="80" height="80">
+  <img src="logoauth.png" alt="AuthApp Logo" width="80" height="80">
   
   # AuthApp
   
