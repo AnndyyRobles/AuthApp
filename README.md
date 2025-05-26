@@ -40,13 +40,13 @@ cd AuthApp
 ```bash
 # Install dependencies
 npm install
-```
+
 
 # Set up environment variables
 
 # Configure your Auth0 credentials
 
 # Run the application
-```bash
+
 npm run dev
 ```
